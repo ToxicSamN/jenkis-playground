@@ -22,7 +22,7 @@ pipeline {
         stage ('Extract Rancher Version from Branch') {
             steps {
                 script {
-                    sh """VERSION=\$(echo "${env.BRANCH_NAME}" | sed -e "s/^release\\///" -e "s/^v//")"""
+                    sh "VERSION=\$(echo \"${env.BRANCH_NAME}\" | sed -e \"s/^release\\///\" -e \"s/^v//\")"
                     version = "${VERSION}"
                 }
                 
