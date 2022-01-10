@@ -21,14 +21,11 @@ pipeline {
         }
         stage ('Extract Rancher Version from Branch') {
             steps {
-                script {
-                    sh "VERSION=\$(echo \"${env.BRANCH_NAME}\" | sed -e \"s/^release\\///\" -e \"s/^v//\")"
-                    echo " extracted version is \$VERSION"
-                    echo " extracted version is $VERSION"
-                    echo " extracted version is ${VERSION}"
-                    version = "\$VERSION"
-                }
-                
+                sh "VERSION=\$(echo \"${env.BRANCH_NAME}\" | sed -e \"s/^release\\///\" -e \"s/^v//\")"
+                echo " extracted version is \$VERSION"
+                echo " extracted version is $VERSION"
+                echo " extracted version is ${VERSION}"
+                version = "\$VERSION"    
                 echo " --- Rancher Version: ${version} --- "
                 echo " SUCCESS "
             }
