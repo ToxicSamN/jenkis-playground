@@ -17,14 +17,15 @@ pipeline {
                 }
             }
         }
-        stage ('Extract Rancher Version') {
+        stage ('Extract Rancher Version from Branch') {
             steps {
                 sh """VERSION=\$(echo "${env.BRANCH_NAME}" | sed -e "s/^release\\///" -e "s/^v//")"""
                 script {
                     version = "${VERSION}"
                 }
                 
-                echo "${version}"
+                echo " --- Rancher Version: ${version} --- "
+                echo " SUCCESS "
             }
         }
     }
