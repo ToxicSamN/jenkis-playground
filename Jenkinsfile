@@ -1,3 +1,5 @@
+def version
+
 pipeline {
     agent any
     options {
