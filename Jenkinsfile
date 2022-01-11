@@ -12,20 +12,15 @@ pipeline {
         USER = 'xksops'
     }
     stages {
-        stage('printenv') {
-            steps {
-                script {
-                    sh 'printenv'
-                }
-            }
-        }
         stage ('Extract Rancher Version from Branch') {
             steps {
                 sh "VERSION=\$(echo \"${env.BRANCH_NAME}\" | sed -e \"s/^release\\///\" -e \"s/^v//\")"
                 echo " extracted version is \$VERSION"
                 echo " extracted version is $VERSION"
                 echo " extracted version is ${VERSION}"
-                version = "\$VERSION"    
+                script {
+                    version = "\$VERSION"
+                }
                 echo " --- Rancher Version: ${version} --- "
                 echo " SUCCESS "
             }
