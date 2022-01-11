@@ -22,7 +22,7 @@ pipeline {
                     version = "\$VERSION"
                 }
                 echo " --- Rancher Version: ${version} --- "
-                echo " SUCCESS "
+                echo " SUCCESS  "
             }
         }
     }
