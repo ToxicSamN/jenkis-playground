@@ -19,7 +19,7 @@ pipeline {
                 echo " extracted version is $VERSION"
                 echo " extracted version is ${VERSION}"
                 script {
-                    version = "\$VERSION"
+                    echo "vaersion: ${VERSION}"
                 }
                 echo " --- Rancher Version: ${version} --- "
                 echo " SUCCESS  "
